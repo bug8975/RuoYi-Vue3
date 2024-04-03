@@ -1,5 +1,5 @@
-import { defineConfig, loadEnv } from 'vite'
 import path from 'path'
+import { defineConfig, loadEnv } from 'vite'
 import createVitePlugins from './vite/plugins'
 
 // https://vitejs.dev/config/

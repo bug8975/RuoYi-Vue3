@@ -54,7 +54,7 @@
     </el-row>
 
     <el-row>
-      <el-col :span="24" class="card-box" v-show="false">
+      <el-col :span="24" class="card-box">
         <el-card>
           <template #header>
             <PieChart style="width: 1em; height: 1em; vertical-align: middle" />
@@ -186,7 +186,7 @@ const monitorData = filteredData.map(item => ({
 
 const option = ref({
   title: {
-    text: '累计时段平均变化量',
+    text: '累计形变单曲线',
     subtext: dayjs().format('YYYY-MM-DD HH:mm:ss'), // 当前时间
     left: 'center', // 标题居中
     textStyle: {

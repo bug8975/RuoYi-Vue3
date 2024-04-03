@@ -1,6 +1,6 @@
-import { createWebHistory, createRouter } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 /* Layout */
-import Layout from '@/layout'
+import Layout from '@/layout';
 
 /**
  * Note: 路由配置项
@@ -57,16 +57,20 @@ export const constantRoutes = [
     component: () => import('@/views/error/401'),
     hidden: true
   },
+  // {
+  //   path: '/dashboard',
+  //   component: () => import('@/views/dashboard'),
+  //   meta: { title: '首页', icon: 'dashboard', affix: true }
+  // },
   {
     path: '',
     component: Layout,
-    redirect: '/index',
+    redirect: '/system/sensor',
     children: [
       {
         path: '/index',
         component: () => import('@/views/index'),
         name: 'Index',
-        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   },
