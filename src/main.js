@@ -6,27 +6,29 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import locale from 'element-plus/es/locale/lang/zh-cn'
 
-import '@/assets/styles/index.scss' // global css
+import '@/assets/styles/index.scss'; // global css
 
 import App from './App'
-import store from './store'
+import directive from './directive'; // directive
 import router from './router'
-import directive from './directive' // directive
+import store from './store'
 
 // 注册指令
-import plugins from './plugins' // plugins
 import { download } from '@/utils/request'
+import plugins from './plugins'; // plugins
 
 // svg图标
-import 'virtual:svg-icons-register'
 import SvgIcon from '@/components/SvgIcon'
 import elementIcons from '@/components/SvgIcon/svgicon'
+import 'virtual:svg-icons-register'
 
-import './permission' // permission control
+import './permission'; // permission control
 
 import { useDict } from '@/utils/dict'
-import { parseTime, resetForm, addDateRange, handleTree, selectDictLabel, selectDictLabels } from '@/utils/ruoyi'
+import { addDateRange, handleTree, parseTime, resetForm, selectDictLabel, selectDictLabels } from '@/utils/ruoyi'
 
+// 百度地图
+import BaiduMap from 'vue-baidu-map-3x'
 // 分页组件
 import Pagination from '@/components/Pagination'
 // 自定义表格工具组件
@@ -43,7 +45,7 @@ import ImagePreview from "@/components/ImagePreview"
 import TreeSelect from '@/components/TreeSelect'
 // 字典标签组件
 import DictTag from '@/components/DictTag'
-import * as echarts from 'echarts';
+import * as echarts from 'echarts'
 const app = createApp(App)
 
 // 全局方法挂载
@@ -71,6 +73,9 @@ app.use(router)
 app.use(store)
 app.use(plugins)
 app.use(elementIcons)
+app.use(BaiduMap, {
+  ak: 'wYecjdkuOs9FoGjK23ouHHMIwf91i1mC'
+})
 app.component('svg-icon', SvgIcon)
 
 directive(app)

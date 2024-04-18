@@ -1,0 +1,272 @@
+// 百度地图样式
+.BMap_cpyCtrl,
+.anchorBL {
+  display: none;
+}
+.BMap_stdMpZoom {
+  position: absolute;
+  bottom: 71px !important;
+  right: 20px !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  > .BMap_button_new {
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    background: url('../images/btn-bg.png') center no-repeat;
+    background-size: cover !important;
+    text-align: center !important;
+    .BMap_smcbg {
+      position: static !important;
+    }
+    .in {
+      background: none !important;
+      width: auto !important;
+      height: auto !important;
+      &:after {
+        color: white;
+        font-family: 'remixicon' !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: '\ea13';
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+    .out {
+      background: none !important;
+      width: auto !important;
+      height: auto !important;
+      &:after {
+        color: white;
+        font-family: 'remixicon' !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: '\f1af';
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+  }
+  .BMap_button_new:first-child {
+    border-bottom: none !important;
+  }
+  .BMap_stdMpZoomOut {
+    margin-top: 12px !important;
+  }
+}
+
+.BMap_bubble_pop {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: linear-gradient(180deg, #062b8b 0%, #066ac7 98.44%);
+  border: 1px solid #1350d0;
+  &::after {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    border-top: 20px solid #0060bb;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    transform: translateX(-50%);
+  }
+  .BMap_bubble-gh-info-window {
+    padding-bottom: 20px;
+    &:hover {
+      .BMap_bubble-gh-close {
+        display: block;
+      }
+    }
+  }
+  .BMap_bubble_top {
+    height: 0 !important;
+  }
+  .BMap_bubble_title {
+    display: block !important;
+  }
+  .BMap_bubble-gh-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    height: 45px !important;
+    line-height: 45px;
+    color: white !important;
+    .BMap_bubble-gh-info-title {
+      font-size: 16px !important;
+    }
+    .BMap_bubble-gh-code {
+      font-size: 10.5px !important;
+    }
+    .BMap_bubble-gh-close {
+      font-size: 20px !important;
+      cursor: pointer;
+      display: none;
+    }
+  }
+  .BMap_bubble_buttons {
+    display: none !important;
+    top: 7px !important;
+  }
+  .BMap_bubble_content {
+    top: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .BMap_bubble-gh-info-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 12px;
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    li {
+      text-align: center;
+      font-size: 14px;
+      i {
+        font-size: 20px;
+      }
+    }
+    .BMap_bubble-ghfonts {
+      letter-spacing: 1px;
+    }
+    .Map_bubble-content {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  }
+  .BMap_bubble_bottom + img {
+    display: none !important;
+  }
+  .BMap_bubble-gh-info-time {
+    // old
+    margin: 5px auto;
+    width: 308px;
+    height: 33px;
+    background: rgba(6, 43, 139, 0.52);
+    border-radius: 50px;
+    text-align: center;
+    line-height: 33px;
+    color: white;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    // new
+    // padding: 0 20px;
+    // color: white;
+  }
+  .BMap_bubble-gh-info-other {
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 5px;
+    width: 100%;
+    height: 35px;
+    justify-content: space-between;
+    display: flex;
+    color: white;
+    font-size: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+  .BMap_bubble-gh-info-other-show {
+    display: flex;
+  }
+  .BMap_bubble-gh-info-other-none {
+    display: none;
+  }
+
+  .BMap_bubble-gh-info-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    padding-top: 5px;
+    margin: 5px 20px 0;
+    color: white;
+    .BMap_bubble-gh-info-footer-title {
+      width: 50px;
+    }
+  }
+  .BMap_bubble-map-line {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid #3dd0ff;
+    z-index: 1;
+  }
+  .BMap_bubble-map-line-left-top {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  .BMap_bubble-map-line-left-bottom {
+    left: 0;
+    bottom: 0;
+    border-right: none;
+    border-top: none;
+  }
+  .BMap_bubble-map-line-right-top {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+  .BMap_bubble-map-line-right-bottom {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+  .BMap_bubble-gh-middle {
+    padding: 0 15px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .bat-green {
+    color: #7bcf4d;
+  }
+  .bat-red {
+    color: #ff3b3b;
+  }
+  .Map_bubble-content-show {
+    display: block;
+  }
+  .Map_bubble-content-none {
+    display: none;
+  }
+  .warning-red {
+    color: #ff3b3b !important;
+  }
+  .warning-yellow {
+    color: #ffcc00 !important;
+  }
+  .warning-blue {
+    color: #3dd0ff !important;
+  }
+  .warning-green {
+    color: #5ad22f !important;
+  }
+  .Map_bubble-content-status {
+    margin: 5px auto 0;
+    height: 30px;
+    line-height: 30px;;
+    width: 63px;
+    border-radius: 50px;
+  }
+  .Map_bubble-content-offline {
+    background: #999;
+    color: white;
+  }
+  .Map_bubble-content-online {
+    background: #5AD22F;
+    color: #0742A1;
+  }
+}

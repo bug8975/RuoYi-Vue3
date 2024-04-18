@@ -25,7 +25,7 @@ export default defineConfig(({ mode, command }) => {
     },
     // vite 相关配置
     server: {
-      port: 80,
+      port: 81,
       host: true,
       open: true,
       proxy: {
@@ -39,6 +39,12 @@ export default defineConfig(({ mode, command }) => {
     },
     //fix:error:stdin>:7356:1: warning: "@charset" must be the first rule in the file
     css: {
+      // css预处理器
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/styles/_value.scss";',
+        },
+      },
       postcss: {
         plugins: [
           {

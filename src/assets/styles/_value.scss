@@ -1,0 +1,23 @@
+// 默认色
+$fontColor: #061b47;
+$mainBlue: #002677;
+$iconBlue: #3e7bfa;
+$systemBgColor: #f0f6fe;
+$systemFont: #8894ac;
+
+@function pxTovw($num) {
+  @return calc($num/1920) * 100vw;
+}
+
+@function pxTovh($num) {
+  @return calc($num/1080) * 100vh;
+}
+
+@function heightToVh($num) {
+  @return calc($num/900) * 100vh;
+}
+
+@function bigPx($num) {
+  // 这边PX使用大写。切记！！！
+  @return calc($num * 1) * 1PX;
+}

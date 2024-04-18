@@ -63,9 +63,17 @@ export const constantRoutes = [
   //   meta: { title: '首页', icon: 'dashboard', affix: true }
   // },
   {
+    path: '/map',
+    name: 'Map',
+    component: () => import('@/views/map/Map.vue'),
+    meta: {
+      title: '首页', icon: 'house-user', affix: true
+    },
+  },
+  {
     path: '',
     component: Layout,
-    redirect: '/system/sensor',
+    redirect: '/map',
     children: [
       {
         path: '/index',

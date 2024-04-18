@@ -6,18 +6,18 @@
     <top-nav id="topmenu-container" class="topmenu-container" v-if="settingsStore.topNav" />
 
     <div class="right-menu">
-      <template v-if="appStore.device !== 'mobile'">
+      <template>
         <header-search id="header-search" class="right-menu-item" v-if="false" />
 
-        <el-tooltip content="源码地址" effect="dark" placement="bottom" v-if="false">
-          <ruo-yi-git id="ruoyi-git" class="right-menu-item hover-effect" />
+        <el-tooltip content="首页" effect="dark" placement="bottom">
+          <div class="ri-home-8-line" @click="router.push('/map')" />
         </el-tooltip>
 
         <el-tooltip content="文档" effect="dark" placement="bottom" v-if="false">
           <ruo-yi-doc id="ruoyi-doc" class="right-menu-item hover-effect" divided command="logout" />
         </el-tooltip>
 
-        <screenfull id="screenfull" class="right-menu-item hover-effect" v-if="false" />
+        <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
         <el-tooltip content="布局大小" effect="dark" placement="bottom" v-if="false">
           <size-select id="size-select" class="right-menu-item hover-effect" />
@@ -53,7 +53,6 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 import HeaderSearch from '@/components/HeaderSearch'
 import RuoYiDoc from '@/components/RuoYi/Doc'
-import RuoYiGit from '@/components/RuoYi/Git'
 import Screenfull from '@/components/Screenfull'
 import SizeSelect from '@/components/SizeSelect'
 import TopNav from '@/components/TopNav'
@@ -61,6 +60,9 @@ import useAppStore from '@/store/modules/app'
 import useSettingsStore from '@/store/modules/settings'
 import useUserStore from '@/store/modules/user'
 import { ElMessageBox } from 'element-plus'
+import { useRouter } from 'vue-router'
+
+const router = useRouter();
 
 const appStore = useAppStore()
 const userStore = useUserStore()
@@ -90,7 +92,7 @@ function logout() {
     type: 'warning'
   }).then(() => {
     userStore.logOut().then(() => {
-      location.href = '/system/sensor';
+      location.href = '/map';
     })
   }).catch(() => { });
 }
